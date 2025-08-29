@@ -1,0 +1,45 @@
+.ticket-list {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ticket-item {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.ticket-item:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-title {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.ticket-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    margin-top: 8px;
+}
+
+.status-open {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.status-in-progress {
+    background-color: #fff3e0;
+    color: #f57c00;
+}
+
+.status-closed {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
