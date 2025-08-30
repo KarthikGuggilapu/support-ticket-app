@@ -1,9 +1,13 @@
-CREATE TABLE IF NOT EXISTS tickets (
-    id SERIAL PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    description TEXT,
-    status VARCHAR(50) DEFAULT 'open',
-    priority VARCHAR(50),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+-- This file is not used since we are using Prisma migrations
+-- The database is automatically managed by Prisma
+--
+-- To create the initial database manually with SQLite syntax:
+-- CREATE TABLE IF NOT EXISTS tickets (
+--     id INTEGER PRIMARY KEY AUTOINCREMENT,
+--     title TEXT NOT NULL,
+--     description TEXT,
+--     status TEXT DEFAULT 'open',
+--     priority TEXT,
+--     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+--     updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
+-- );
