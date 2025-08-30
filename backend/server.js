@@ -6,7 +6,13 @@ import ticketRoutes from "./routes/tickets.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://support-ticket-frontend.onrender.com'
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 app.use("/api/tickets", ticketRoutes);

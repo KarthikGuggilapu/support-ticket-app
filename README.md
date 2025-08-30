@@ -104,22 +104,32 @@ support-ticket-app
 
 ## Deployment
 
-### Backend Deployment (Vercel)
+### Deployment on Render (Recommended for Demo)
 
 1. Push your code to GitHub
-2. Create a new project on Vercel
-3. Connect your GitHub repository
-4. The project will automatically deploy
 
-Note: The SQLite database will be created fresh on each deployment since Vercel has an ephemeral filesystem. This is suitable for demonstration purposes, but for production, consider using a persistent database service.
+2. Go to [Render.com](https://render.com) and create an account
 
-### Frontend Deployment (Vercel)
+3. Click "New +" and select "Blueprint"
 
-1. Push your code to GitHub
-2. Create a new project on Vercel
-3. Add the following environment variable:
-   - `REACT_APP_API_URL`: Your backend API URL (e.g., https://your-backend.vercel.app/api)
-4. Deploy the project
+4. Connect your GitHub repository
+
+5. Render will automatically detect the `render.yaml` configuration and set up both services:
+   - Backend API service
+   - Frontend static site
+
+The deployment will automatically:
+- Set up the Node.js environment
+- Install dependencies
+- Generate Prisma client
+- Create and migrate the SQLite database
+- Build and serve the frontend
+
+Your app will be available at:
+- Frontend: `https://support-ticket-frontend.onrender.com`
+- Backend: `https://support-ticket-backend.onrender.com`
+
+Note: Render's free tier is perfect for demos as it maintains filesystem persistence between deployments, which works well with SQLite.
 
 ## Additional Notes
 

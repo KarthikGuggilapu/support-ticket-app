@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: support-ticket-backend
+    env: node
+    buildCommand: cd backend && npm install && npx prisma generate
+    startCommand: cd backend && node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+
+  - type: web
+    name: support-ticket-frontend
+    env: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://support-ticket-backend.onrender.com/api
