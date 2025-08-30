@@ -1,13 +1,13 @@
 # Support Ticket Application
 
-This is a full-stack web application for managing support tickets. It allows users to raise, view, and update support tickets. The application is built using React.js for the frontend and Node.js with Express for the backend, with PostgreSQL as the database and Supabase for database management.
+This is a full-stack web application for managing support tickets. It allows users to create, view, and update support tickets. The application is built using React.js for the frontend and Node.js with Express for the backend, with SQLite as the database and Prisma as the ORM.
 
 ## Tech Stack
 
 - **Frontend**: React.js
 - **Backend**: Node.js, Express
-- **Database**: PostgreSQL
-- **Database Management**: Supabase
+- **Database**: SQLite
+- **ORM**: Prisma
 
 ## Features
 
@@ -54,21 +54,68 @@ support-ticket-app
 
 ## Setup Instructions
 
-### Backend
+### Backend Setup
 
-1. Navigate to the `backend` directory.
-2. Create a `.env` file and add your database connection string.
-3. Install dependencies using `npm install`.
-4. Start the server with `npm start`.
+1. Navigate to the `backend` directory:
+   ```bash
+   cd backend
+   ```
 
-### Frontend
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-1. Navigate to the `frontend` directory.
-2. Install dependencies using `npm install`.
-3. Start the React application with `npm start`.
+3. Initialize the database:
+   ```bash
+   npx prisma generate
+   npx prisma migrate dev
+   ```
+
+4. Start the server:
+   ```bash
+   npm start
+   ```
+
+### Frontend Setup
+
+1. Navigate to the `frontend` directory:
+   ```bash
+   cd frontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the React application:
+   ```bash
+   npm start
+   ```
+
+## Deployment
+
+### Backend Deployment (Vercel)
+
+1. Push your code to GitHub
+2. Create a new project on Vercel
+3. Connect your GitHub repository
+4. The project will automatically deploy
+
+Note: The SQLite database will be created fresh on each deployment since Vercel has an ephemeral filesystem. This is suitable for demonstration purposes, but for production, consider using a persistent database service.
+
+### Frontend Deployment (Vercel)
+
+1. Push your code to GitHub
+2. Create a new project on Vercel
+3. Add the following environment variable:
+   - `REACT_APP_API_URL`: Your backend API URL (e.g., https://your-backend.vercel.app/api)
+4. Deploy the project
 
 ## Additional Notes
 
-- Ensure that PostgreSQL is running and accessible.
-- Use Supabase for managing your database and handling authentication if needed.
-- The application is designed to be responsive and optimized for mobile devices.
+- The application uses SQLite for simplicity and ease of setup
+- No additional database setup is required as SQLite is file-based
+- The application is designed to be responsive and optimized for mobile devices
+- For production deployment, consider using a persistent database service
