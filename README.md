@@ -26,9 +26,15 @@ support-ticket-app
 │   │   └── tickets.js
 │   ├── controllers
 │   │   └── ticketsController.js
-│   ├── models
-│   │   └── ticketModel.js
+│   ├── prisma
+│   │   ├── schema.prisma
+│   │   ├── migrations/
+│   │   └── dev.db
+│   ├── lib
+│   │   └── prisma.js
 │   ├── .env
+│   ├── .env.example
+│   ├── vercel.json
 │   └── README.md
 ├── frontend
 │   ├── src
@@ -47,8 +53,10 @@ support-ticket-app
 │   │       └── App.css
 │   ├── public
 │   │   └── index.html
+│   ├── .env.production
 │   ├── package.json
 │   └── README.md
+├── .gitignore
 └── README.md
 ```
 
