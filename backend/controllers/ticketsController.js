@@ -7,12 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Direct database connection configuration for Supabase
-const sql = postgres({
-  host: 'db.xnghtzqkgodmrscmpybg.supabase.co',
-  port: 5432,
-  database: 'postgres',
-  username: 'postgres',
-  password: 'p0rP2XGC2XWoDVKb',
+const sql = postgres(process.env.DATABASE_URL, {
   max: 1, // Limit connections for direct database access
   ssl: {
     rejectUnauthorized: false,
